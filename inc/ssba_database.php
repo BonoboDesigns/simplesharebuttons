@@ -57,10 +57,11 @@ function ssba_activate() {
         'ssba_font_weight' => '',
 
         // include
-        'ssba_selected_buttons' => 'facebook,google,twitter,linkedin',
+        'ssba_selected_buttons' => 'facebook,google,twitter,linkedin,bonoboville',
 
         // custom images
         'ssba_custom_email' => '',
+        'ssba_custom_bonoboville' => '',
         'ssba_custom_google' => '',
         'ssba_custom_facebook' => '',
         'ssba_custom_twitter' => '',
@@ -192,8 +193,11 @@ function ssba_button_helper_array()
 			'full_name' 	=> 'Diggit'
 		),
 		'email' => array(
-			'full_name' 	=> 'Email'
-		),
+            'full_name'     => 'Email'
+        ),
+        'bonoboville' => array(
+            'full_name'     => 'Bonoboviile'
+        ),
 		'facebook' => array(
 			'full_name' 	=> 'Facebook'
 		),
@@ -288,6 +292,7 @@ function ssba_delete_old_options()
 
     // custom images
     delete_option('ssba_custom_email');
+    delete_option('ssba_custom_bonoboville');
     delete_option('ssba_custom_google');
     delete_option('ssba_custom_facebook');
     delete_option('ssba_custom_twitter');

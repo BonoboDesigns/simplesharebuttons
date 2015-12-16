@@ -715,6 +715,33 @@ function ssba_email($arrSettings, $urlCurrentPage, $strPageTitle, $booShowShareC
     return $htmlShareButtons;
 }
 
+// get bonoboville button created by UNSCENE Bonobo (a.k.a. The DEEJAY)
+function ssba_bonoboville($arrSettings, $urlCurrentPage, $strPageTitle, $booShowShareCount) {
+
+    // bonoboville share link
+    $htmlShareButtons = '<a data-site="bonoboville" class="ssba_bonoboville_share ssba_share_link" href="https://bonoboville.com/home?share=' . $urlCurrentPage  . '" ' . ($arrSettings['ssba_share_new_window'] == 'Y' ? ' target="_blank" ' : NULL) . ($arrSettings['ssba_rel_nofollow'] == 'Y' ? ' rel="nofollow" ' : NULL) . '>';
+
+    // if image set is not custom
+    if ($arrSettings['ssba_image_set'] != 'custom') {
+
+        // show ssba image
+        $htmlShareButtons .= '<img src="' . plugins_url() . '/simple-share-buttons-adder/buttons/' . $arrSettings['ssba_image_set'] . '/bonoboville.png" title="Bonoboville" class="ssba ssba-img" alt="Share on Bonoboville" />';
+    }
+
+    // if using custom images
+    else {
+
+        // show custom image
+        $htmlShareButtons .= '<img src="' . $arrSettings['ssba_custom_bonoboville'] . '" alt="Share on Bonoboville" title="Bonoboville" class="ssba ssba-img" />';
+    }
+
+    // close href
+    $htmlShareButtons .= '</a>';
+
+    // return share buttons
+    return $htmlShareButtons;
+}
+
 // get flattr button
 function ssba_flattr($arrSettings, $urlCurrentPage, $strPageTitle, $booShowShareCount) {
 
